@@ -1,0 +1,55 @@
+﻿@model Using_API.Models.Movie
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Year)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Year)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Rate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Rate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GenreId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GenreId)
+        </dd>
+        <dt class="col-sm-2">
+            Genre Name
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Genre.Name)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a href="~/Home/Update/@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

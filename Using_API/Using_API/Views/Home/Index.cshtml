@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Using_API.Models.Movie>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Year)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                Genre Name
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Genre.Name)
+            </td>
+            <td>
+                   @* @Html.ActionLink("Edit", "Update", new {  id=item.Id  }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.Id  })*@
+                    <a href="Home/Update/@item.Id">Edit</a>
+                    <a href="Home/Details/@item.Id">Details</a>
+                    <a href="Home/Delete/@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
